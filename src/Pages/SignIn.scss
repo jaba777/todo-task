@@ -1,0 +1,68 @@
+.sign-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   form{
+    width: 588px;
+    
+    margin: 0 auto;
+    padding: 1rem 1.2rem;
+    background-color: #fff;
+    max-width: 95%;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    h1{
+        text-transform: capitalize;
+        font-size: 48px;
+    }
+
+    .photo-container{
+        h5{
+            font-size: 22px;
+            font-weight: 300;
+        }
+        margin-top: 44px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+        img{
+            width: 44px;
+            height: 40px;
+            cursor: pointer;
+        }
+    }
+
+    .username-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 53px;
+        align-items: center;
+        input{
+            width: 487px;
+            height: 76px;
+            border: none;
+            outline: none;
+            font-size: 22px;
+            padding: 5px;
+            
+        }
+    }
+
+    button{
+        border: none;
+        background: #5EFC8D;
+        font-size: 32px;
+        width: 258px;
+        height: 66px;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+
+   }
+}
