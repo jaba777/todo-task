@@ -24,11 +24,20 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   );
 
   const login = (inputs: CurrentUser | any) => {
-    const photoUrl = URL.createObjectURL(inputs?.photo);
-    setCurrentUser({
-      photo: photoUrl,
-      name: inputs?.name
-    });
+    const files  = inputs?.photo;
+      const reader = new FileReader();
+  
+      reader.readAsDataURL(files);
+      
+      reader.onload = () => {
+        setCurrentUser({
+          ...currentUser,
+          photo: reader.result as string,
+          name: inputs?.name
+        });
+        
+      }
+        
   };
 
   useEffect(() => {

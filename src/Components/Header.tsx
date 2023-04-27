@@ -17,10 +17,13 @@ const Header = () => {
       name: currentUser?.currentUser?.name,
       photo: currentUser?.currentUser?.photo
     });
-  }, []);
+  }, [currentUser?.currentUser?.name]);
 
   // set a default image URL or use a placeholder image if userData.photo is undefined or not a string
   const imageUrl = userData?.photo && typeof userData?.photo === 'string' ? userData.photo : 'default-image-url';
+  useEffect(()=>{
+    console.log( userData?.photo)
+  },[])
 
   return (
     <>
