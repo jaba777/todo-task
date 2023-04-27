@@ -5,9 +5,8 @@
     
    form{
     width: 588px;
-    
     margin: 0 auto;
-    padding: 1rem 1.2rem;
+    padding: 1.2rem 1.5rem;
     background-color: #fff;
     max-width: 95%;
     margin-top: 2rem;
@@ -46,12 +45,16 @@
         input{
             width: 487px;
             height: 76px;
-            border: none;
             outline: none;
             font-size: 22px;
             padding: 5px;
-            
+            max-width: 98%;
         }
+        
+    }
+
+    .error{
+        color: red;
     }
 
     button{

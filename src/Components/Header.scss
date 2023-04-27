@@ -1,0 +1,37 @@
+.header{
+    background: #000;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    .header-section{
+        max-width: 1366px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            h1{
+                font-weight: 800;
+                font-size: 36px;
+                text-transform: uppercase;       
+            }
+        }
+        .lists{
+            ul{
+                list-style: none;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                li{
+                    font-size: 22px;
+                }
+                img{
+                    width: 68px;
+                    height: 68px;
+                    border-radius: 50%;
+                }
+            }
+            
+        }
+    }
+    
+}

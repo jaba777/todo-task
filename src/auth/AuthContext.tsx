@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState, ReactNode } from "react";
 
 interface CurrentUser {
-  photo: string;
+  photo: FileList | string;
   name: string;
 }
 
@@ -23,8 +23,12 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
     printItems ? JSON.parse(printItems) : null
   );
 
-  const login = (inputs: CurrentUser) => {
-    setCurrentUser(inputs);
+  const login = (inputs: CurrentUser | any) => {
+    const photoUrl = URL.createObjectURL(inputs?.photo);
+    setCurrentUser({
+      photo: photoUrl,
+      name: inputs?.name
+    });
   };
 
   useEffect(() => {
