@@ -7,6 +7,7 @@ interface CurrentUser {
 
 interface AuthContextValue {
   currentUser: CurrentUser | null;
+  setCurrentUser: any;
   login: (inputs: CurrentUser) => void;
 }
 
@@ -45,7 +46,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   }, [currentUser]);
 
   return (
-    <AuthContext.Provider value={{ currentUser, login }}>
+    <AuthContext.Provider value={{ currentUser, login, setCurrentUser }}>
       {children}
     </AuthContext.Provider>
   );

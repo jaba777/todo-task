@@ -4,7 +4,7 @@ import BlackBackground from '../Components/BlackBackground';
 import './SignIn.scss';
 import AddPhoto from '../Images/add_a_photo_FILL0_wght400_GRAD0_opsz48.png';
 import {AuthContext} from '../auth/AuthContext';
-import { useNavigate } from 'react-router-dom';
+
 
 
 type login = {
@@ -15,7 +15,7 @@ type login = {
 const SignIn = () => {
 
     const login = useContext(AuthContext);
-    const navigate=useNavigate();
+    
 
     const {register,handleSubmit,formState: { errors }} = useForm<login>();
 
@@ -27,7 +27,9 @@ const SignIn = () => {
               photo: event.photo[0],
               name: event?.name
             })
-            navigate('/profile',{state: '/profile'})
+            
+            window.location.href='/profile'
+            
            
         } catch (error) {
             console.log(error)

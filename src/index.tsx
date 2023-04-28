@@ -5,6 +5,8 @@ import './index.scss';
 import {AuthContextProvider} from './auth/AuthContext';
 import {DailyContextProvider} from './auth/DailyContext';
 import {BrowserRouter as Router} from 'react-router-dom';
+
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

@@ -12,6 +12,7 @@ interface DailyContextProviderProps {
 
 interface CreateListContextValue {
   currentList: ListUser | null;
+  setCurrenList: any;
   createListHandler: (inputs: ListUser) => void;
   deleteListHandler: (id:number|string)=>void;
   markedHandler:  (id:number|string)=>void;
@@ -61,6 +62,7 @@ export const DailyContextProvider = ({ children }: DailyContextProviderProps) =>
 
   const contextValue: CreateListContextValue = {
     currentList,
+    setCurrenList,
     createListHandler,
     deleteListHandler,
     markedHandler
