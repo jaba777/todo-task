@@ -27,7 +27,7 @@ const SignIn = () => {
               photo: event.photo[0],
               name: event?.name
             })
-            navigate('/profile')
+            navigate('/profile',{state: '/profile'})
            
         } catch (error) {
             console.log(error)
