@@ -4,6 +4,7 @@ import './Profile.scss';
 import Done from '../Images/done.png';
 import Delete from '../Images/delete.png';
 import {createListContext} from '../auth/DailyContext';
+import {MoodEffectContext} from '../auth/MoodEffect';
 
 interface ListUser {
   id: number | string;
@@ -44,10 +45,6 @@ const Profile = () => {
     setDailyTasks(currentList?.currentList)
   },[currentList?.currentList])
 
-  
-
- 
-  
   const toggleBrandButton = async (id: number |string) => {
    
     try {
@@ -57,8 +54,11 @@ const Profile = () => {
     }
   };
 
+  const useMoodEffect=useContext(MoodEffectContext)
+
+
   return (
-    <>
+   <section className={`profile-page ${useMoodEffect?.effect==='dark'? 'dark': 'light'}`}>
     <Header />
      <section className='todos-container'>
 
@@ -80,7 +80,7 @@ const Profile = () => {
         </ul>
 
      </section>
-    </>
+   </section>
   )
 }
 

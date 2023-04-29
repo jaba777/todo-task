@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../auth/AuthContext';
 import { createListContext } from '../auth/DailyContext';
+import {MoodEffectContext} from '../auth/MoodEffect';
 import './Header.scss';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
+
+import Switch from "react-switch";
+
 
 
 interface User {
@@ -18,6 +22,7 @@ const Header = () => {
   const crrentList = useContext(createListContext);
   const [userData, setUserData] = useState<User>({ name: undefined, photo: undefined });
  const navigate = useNavigate();
+ const useMoodEffect=useContext(MoodEffectContext)
 
   useEffect(() => {
     setUserData({
@@ -44,8 +49,23 @@ const Header = () => {
   const Logout=()=>{
     currentUser?.setCurrentUser(null);
     crrentList?.setCurrenList(null)
+    useMoodEffect?.setEffect('light')
     navigate('/');
   }
+
+
+ 
+
+  
+
+  const [checked,setChecked]=useState(false);
+  
+  function effectchange(e:any){
+    setChecked(false)
+   
+   useMoodEffect?.setEffect((curr:string)=>curr === 'light' ? 'dark' : 'light')
+  }
+ 
 
   return (
     <>
@@ -56,6 +76,10 @@ const Header = () => {
           </div>
           <div className="lists">
             <ul>
+              <li>
+              <Switch onChange={effectchange} checked={useMoodEffect?.effect==='dark'} />
+              
+              </li>
               <li>{userData?.name}</li>
               
               <li>
