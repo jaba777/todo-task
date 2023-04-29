@@ -20,6 +20,13 @@
         font-size: 40px;
         text-transform: capitalize;
         margin-top: 46px;
+        @media only screen and (max-width: 650px){
+            font-size: 32px;
+        }
+
+        @media only screen and (max-width: 512px){
+            font-size: 22px;
+        }
     }
    
     button{
@@ -33,5 +40,13 @@
         font-weight: 300;
         cursor: pointer;
         max-width: 100%;
+        @media only screen and (max-width: 650px){
+            width: 300px;
+            height: 70px;
+            font-size: 32px;
+        }
+
+        
     }
 }
+

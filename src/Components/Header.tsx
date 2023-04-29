@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
+import { BiMenu } from "react-icons/bi";
 
 import Switch from "react-switch";
 
@@ -54,16 +55,17 @@ const Header = () => {
   }
 
 
- 
-
   
 
   const [checked,setChecked]=useState(false);
   
-  function effectchange(e:any){
-    setChecked(false)
-   
+  function effectchange(){
+    
    useMoodEffect?.setEffect((curr:string)=>curr === 'light' ? 'dark' : 'light')
+  }
+
+  const menuHandler=()=>{
+    setChecked(!checked)
   }
  
 
@@ -74,8 +76,12 @@ const Header = () => {
           <div className="logo">
             <h1>to do</h1>
           </div>
+          <div className="menuIcon">
+          <BiMenu onClick={menuHandler} />
+          </div>
           <div className="lists">
-            <ul>
+           
+            <ul className={`${checked ? 'visible' : 'hidden'}`}>
               <li>
               <Switch onChange={effectchange} checked={useMoodEffect?.effect==='dark'} />
               

@@ -8,12 +8,30 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media only screen and (max-width: 400px){
+            display: block;
+        } 
         .logo{
             h1{
                 font-weight: 800;
                 font-size: 36px;
-                text-transform: uppercase;       
+                text-transform: uppercase;  
+                @media only screen and (max-width: 650px){
+                    font-size: 32px;
+                    font-weight: 400;
+                }     
             }
+        }
+        .menuIcon{
+            font-size: 32px;
+            cursor: pointer;
+            display: none;
+            @media only screen and (max-width: 400px){
+                display: flex;
+                position: absolute;
+                right: 2rem;
+                top: 15px;
+            } 
         }
         .lists{
             ul{
@@ -21,9 +39,21 @@
                 display: flex;
                 align-items: center;
                 gap: 1rem;
+                @media only screen and (max-width: 400px){
+                   flex-direction: column;
+                   align-items: self-start;
+                   margin-top: 2rem;
+                   display: none;
+                } 
                 li{
                     font-size: 22px;
                     font-weight: 300;
+                    @media only screen and (max-width: 400px){
+                        margin-top: 2rem;
+                        
+                     }
+                     border-bottom: 2px solid #214969;
+                     width: 100%;
                 }
                 img{
                     width: 68px;
@@ -33,6 +63,15 @@
                 }   
                   
                   
+            }
+
+            .visible{
+                @media only screen and (max-width: 400px){
+                    flex-direction: column;
+                    align-items: self-start;
+                    margin-top: 2rem;
+                    display: flex;
+                 } 
             }
             
         }
